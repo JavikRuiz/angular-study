@@ -1,0 +1,12 @@
+<div class="container d-flex justify-content-center">
+    <div class="row col-12 justify-content-center">
+        <h2 class="text-center m-3" style="cursor: pointer;" (click)="initialImage()">Galeria</h2>
+        <div class="col-md-12 text-center">
+            <button class="btn btn-outline-success m-2" (click)="src = img1">Imagen Uno</button>
+            <button class="btn btn-outline-primary m-2" (click)="src = img2">Imagen Dos</button>
+        </div>
+        <div class="col-md-6 m-5" style="border: green 1px solid;">
+            <img [src]="src" alt="" class="my-4">
+        </div>
+    </div>
+</div>

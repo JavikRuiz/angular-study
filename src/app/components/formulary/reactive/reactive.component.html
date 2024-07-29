@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-body">
+        <form (ngSubmit)=procesar() [formGroup]="formContact">
+            <div class="mb-2">
+                <label for="" class="form-label">
+                    Nombre
+                </label>
+                <input type="text" formControlName="name" class="form-control" placeholder="Ingrese su Nombre">
+                <div class="alert alert-danger mt-2" [hidden]="name.valid || name.pristine">
+                    El nombre es obligatorio
+                </div>
+            </div>
+            <div class="mb-2">
+                <label for="" class="form-label">
+                    Email
+                </label>
+                <input type="text" formControlName="email" class="form-control" placeholder="Ingrese su Email">
+                <div class="alert alert-danger mt-2" [hidden]="email.valid || email.pristine">
+                    <span *ngIf="email.errors?.['required']">
+                        El Email es obligatorio
+                    </span>
+                    <span *ngIf="email.errors?.['email']">
+                        El campo Email es incorrecto
+                    </span>
+                </div>
+            </div>
+            <button class="btn btn-outline-success mt-2" [disabled]="formContact.invalid">
+                Enviar
+            </button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container d-flex justify-content-center">
+    <button [ngClass]="{'disabled':button_disabled}" class="btn btn-outline-warning m-2" (click)="text_color = 'text-warning'">COLOR AMARILLO</button>
+    <button [ngClass]="{'disabled':button_disabled}" class="btn btn-outline-primary m-2" (click)="text_color = 'text-primary'">COLOR AZUL</button>
+    <button [ngClass]="{'disabled':button_disabled}" class="btn btn-outline-danger m-2" (click)="text_color = 'text-danger'">COLOR ROJO</button>
+</div>
+<p [class]="[text_color, 'text-center']">Texto que va a cambiar de color</p>
+
+<P [class]="[text_color, 'text-center']">
+    {{text_color}}
+</P>
+<p>
+    valor:
+    {{button_disabled}}
+</p>
+
+<div class="container d-flex justify-content-center" (click)="button_disabled = !button_disabled">
+    <button class="btn btn-outline-secondary"> habilitar / des-habilitar</button>
+</div>
+<br>
+<h1 class="text-center m-20">Otra forma</h1>
+<div class="container d-flex justify-content-center">
+    <button [disabled]="button_disabled" class="btn btn-outline-warning m-2" (click)="text_color = 'text-warning'">COLOR AMARILLO</button>
+    <button [disabled]="button_disabled" class="btn btn-outline-primary m-2" (click)="text_color = 'text-primary'">COLOR AZUL</button>
+    <button [disabled]="button_disabled" class="btn btn-outline-danger m-2" (click)="text_color = 'text-danger'">COLOR ROJO</button>
+</div>
+<p [class]="[text_color, 'text-center']">Texto que va a cambiar de color</p>

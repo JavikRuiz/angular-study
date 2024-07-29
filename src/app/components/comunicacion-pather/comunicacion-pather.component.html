@@ -1,0 +1,4 @@
+<h2>Componente Padre</h2>
+<span><small>{{title}}</small></span>
+<input type="text" class="form-control m-2" [(ngModel)]="title">
+<app-children [(title)]="title"></app-children>

@@ -1,0 +1,9 @@
+<div class="row d-flex justify-content-center">
+    <input type="text" placeholder="Ingresa tu Nombre" class="form-control" #name>
+    <button class="btn btn-outline-success mt-2" (click)="mostrar_consola(name.value)">Mostrar en consola</button>
+</div>
+
+<div class="alert alert-primary mt-4" *ngIf="openAlert">
+    <p>Se ha enviado el mensaje</p>
+    <button class="btn btn-danger btn-sm" (click)="openAlert = false">X</button>
+</div>
